@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -59,18 +58,27 @@
                                                     <state key="normal" title="Pause">
                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="pauseOrResumeTapped:" destination="eoZ-NT-WBj" eventType="touchUpInside" id="wTL-l3-6rv"/>
+                                                    </connections>
                                                 </button>
                                                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDX-Qf-So6">
                                                     <rect key="frame" x="319" y="12" width="48" height="30"/>
                                                     <state key="normal" title="Cancel">
                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="cancelTapped:" destination="eoZ-NT-WBj" eventType="touchUpInside" id="uZb-8a-QI3"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Con-DZ-hJ2">
                                                     <rect key="frame" x="289" y="9" width="69" height="30"/>
                                                     <state key="normal" title="Download">
                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="downloadTapped:" destination="eoZ-NT-WBj" eventType="touchUpInside" id="1Eg-tb-OqJ"/>
+                                                    </connections>
                                                 </button>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100% of 1.35MB" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyo-Fb-GXW">
                                                     <rect key="frame" x="282" y="44" width="84" height="14"/>
@@ -101,6 +109,15 @@
                                                 <constraint firstItem="8R7-MN-Y8a" firstAttribute="top" secondItem="r08-Yp-9P8" secondAttribute="bottom" constant="6" id="zJ2-9x-9ir"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="artistLabel" destination="r08-Yp-9P8" id="fxe-Nb-2bX"/>
+                                            <outlet property="cancelButton" destination="LDX-Qf-So6" id="YXy-c8-vud"/>
+                                            <outlet property="downloadButton" destination="Con-DZ-hJ2" id="5Tz-Qv-zAV"/>
+                                            <outlet property="pauseButton" destination="xiz-68-VSM" id="RZd-Xo-oql"/>
+                                            <outlet property="progressLabel" destination="kyo-Fb-GXW" id="ri0-Og-QV8"/>
+                                            <outlet property="progressView" destination="8R7-MN-Y8a" id="k37-dL-M2i"/>
+                                            <outlet property="titleLabel" destination="8HR-6V-bJq" id="gHd-Io-bsg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

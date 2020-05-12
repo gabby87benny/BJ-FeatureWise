@@ -16,13 +16,25 @@ extension RootViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
+        dismissKeyboard()
         
         if (!searchBar.text!.isEmpty) {
             queryService.getSearchResults(searchTerm: searchBar.text!) { (tracks, error) in
+                if let tracks = tracks {
+                    self.searchResults = tracks
+                    self.tableView.reloadData()
+                    self.tableView.setContentOffset(CGPoint.zero, animated: true)
+                }
                 
+                if !error.isEmpty {
+                    print("Search error: " + error)
+                }
             }
         }
+    }
+    
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+      return .topAttached
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {

@@ -19,6 +19,9 @@
 		5B73A2092464B3A900C664B3 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B73A2082464B3A900C664B3 /* Track.swift */; };
 		5B73A20B2464B75000C664B3 /* RootViewController+SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B73A20A2464B75000C664B3 /* RootViewController+SearchBarDelegate.swift */; };
 		5B73A20E2464B9C500C664B3 /* QueryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B73A20D2464B9C500C664B3 /* QueryService.swift */; };
+		5B73A2132469F90400C664B3 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B73A2122469F90400C664B3 /* Download.swift */; };
+		5B73A215246B0ED800C664B3 /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B73A214246B0ED800C664B3 /* DownloadService.swift */; };
+		5B73A217246B261600C664B3 /* RootViewController+URLSessionDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B73A216246B261600C664B3 /* RootViewController+URLSessionDelegates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		5B73A2082464B3A900C664B3 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		5B73A20A2464B75000C664B3 /* RootViewController+SearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+SearchBarDelegate.swift"; sourceTree = "<group>"; };
 		5B73A20D2464B9C500C664B3 /* QueryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryService.swift; sourceTree = "<group>"; };
+		5B73A2122469F90400C664B3 /* Download.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		5B73A214246B0ED800C664B3 /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
+		5B73A216246B261600C664B3 /* RootViewController+URLSessionDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+URLSessionDelegates.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,7 @@
 				5B73A2032464A43E00C664B3 /* SceneDelegate.swift */,
 				5B73A1E2246491EE00C664B3 /* RootViewController.swift */,
 				5B73A20A2464B75000C664B3 /* RootViewController+SearchBarDelegate.swift */,
+				5B73A216246B261600C664B3 /* RootViewController+URLSessionDelegates.swift */,
 				5B73A2052464B0F600C664B3 /* RootViewTableViewCell.swift */,
 				5B73A1E4246491EE00C664B3 /* Main.storyboard */,
 				5B73A1EA246491F000C664B3 /* Assets.xcassets */,
@@ -118,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				5B73A2082464B3A900C664B3 /* Track.swift */,
+				5B73A2122469F90400C664B3 /* Download.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				5B73A20D2464B9C500C664B3 /* QueryService.swift */,
+				5B73A214246B0ED800C664B3 /* DownloadService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -231,10 +240,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B73A2132469F90400C664B3 /* Download.swift in Sources */,
 				5B73A1E3246491EE00C664B3 /* RootViewController.swift in Sources */,
 				5B73A1DF246491EE00C664B3 /* AppDelegate.swift in Sources */,
 				5B73A2062464B0F600C664B3 /* RootViewTableViewCell.swift in Sources */,
 				5B73A1E9246491EE00C664B3 /* BJTunes.xcdatamodeld in Sources */,
+				5B73A215246B0ED800C664B3 /* DownloadService.swift in Sources */,
+				5B73A217246B261600C664B3 /* RootViewController+URLSessionDelegates.swift in Sources */,
 				5B73A20E2464B9C500C664B3 /* QueryService.swift in Sources */,
 				5B73A2042464A43E00C664B3 /* SceneDelegate.swift in Sources */,
 				5B73A2092464B3A900C664B3 /* Track.swift in Sources */,

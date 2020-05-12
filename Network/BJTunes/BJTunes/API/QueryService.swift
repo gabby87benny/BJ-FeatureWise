@@ -9,7 +9,7 @@
 import Foundation
 
 class QueryService {
-    
+    typealias JSONDictionary = [String: Any]
     typealias QueryResult = ([Track]?, String) -> ()
     let defaultSession = URLSession(configuration: .default)
     var dataTask: URLSessionDataTask?
@@ -42,6 +42,34 @@ class QueryService {
     }
     
     fileprivate func updateSearchResults(_ data: Data) {
+        var response: JSONDictionary?
+        tracks.removeAll()
+        do {
+            response = try JSONSerialization.jsonObject(with: data, options: []) as? JSONDictionary
+        }
+        catch let parseError as NSError {
+            self.errorMessage += "JSONSerialization error: \(parseError.localizedDescription)\n"
+            return
+        }
         
+        guard let array = response!["results"] as? [Any] else {
+            errorMessage += "Dictionary does not contain results key\n"
+            return
+        }
+        
+        var index = 0
+        
+        for trackDict in array {
+            if let trackDictionary = trackDict as? JSONDictionary,
+              let previewURLString = trackDictionary["previewUrl"] as? String,
+              let previewURL = URL(string: previewURLString),
+              let name = trackDictionary["trackName"] as? String,
+              let artist = trackDictionary["artistName"] as? String {
+              tracks.append(Track(name: name, artist: artist, previewURL: previewURL, index: index))
+              index += 1
+            } else {
+              errorMessage += "Problem parsing trackDictionary\n"
+            }
+        }
     }
 }
