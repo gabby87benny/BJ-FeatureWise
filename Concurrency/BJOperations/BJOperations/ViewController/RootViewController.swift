@@ -25,16 +25,21 @@ class RootViewController: UIViewController {
     }
     
     @IBAction func startButtonTapped(_ sender: UIButton) {
-    
+        APIManager.sharedManager.getItems {[weak self] items in
+            self?.items = items
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
     }
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
-    
+        APIManager.sharedManager.cancelAllOperations()
     }
 }
 
 //MARK: Table view data source
-extension RootViewController {
+extension RootViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
@@ -51,7 +56,7 @@ extension RootViewController {
 }
 
 //MARK: Table view delegate
-extension RootViewController {
+extension RootViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
